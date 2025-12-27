@@ -1,7 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 
-export const Hero = () => {
+type HeroProps = {
+  copy: Record<string, any>;
+};
+
+export const Hero = ({ copy }: HeroProps) => {
+  const hero = copy.hero;
   return (
     <section id="hero" className="gradient-hero relative flex min-h-screen items-center pt-20">
       <div className="absolute inset-0 overflow-hidden">
@@ -18,7 +23,7 @@ export const Hero = () => {
             >
               <Sparkles className="h-4 w-4 text-accent" />
               <span className="text-sm font-medium text-secondary-foreground">
-                Bienvenidos a Pole Sport Medellin
+                {hero.badge}
               </span>
             </div>
 
@@ -26,17 +31,16 @@ export const Hero = () => {
               className="mb-6 text-4xl font-heading font-bold leading-tight md:text-5xl lg:text-6xl animate-fade-in"
               style={{ animationDelay: "0.2s" }}
             >
-              Pole para <span className="text-gradient">todos los cuerpos.</span>
+              {hero.title} <span className="text-gradient">{hero.titleHighlight}</span>
               <br />
-              Fuerza, flexibilidad y confianza.
+              {hero.titleSuffix}
             </h1>
 
             <p
               className="mx-auto mb-8 max-w-xl text-lg text-muted-foreground md:text-xl lg:mx-0 animate-fade-in"
               style={{ animationDelay: "0.3s" }}
             >
-              Descubre tu fuerza interior en un espacio seguro e inclusivo.
-              Entrenamiento profesional con tecnica, pasion y comunidad.
+              {hero.subtitle}
             </p>
 
             <div
@@ -45,12 +49,12 @@ export const Hero = () => {
             >
               <Button variant="hero" size="xl" asChild>
                 <a href="#contacto">
-                  Reserva tu clase de prueba
+                  {hero.ctaPrimary}
                   <ArrowRight className="h-5 w-5" />
                 </a>
               </Button>
               <Button variant="hero-outline" size="xl" asChild>
-                <a href="#clases">Ver tipos de clases</a>
+                <a href="#clases">{hero.ctaSecondary}</a>
               </Button>
             </div>
 
@@ -58,11 +62,7 @@ export const Hero = () => {
               className="mt-12 flex flex-wrap justify-center gap-8 lg:justify-start animate-fade-in"
               style={{ animationDelay: "0.5s" }}
             >
-              {[
-                { value: "500+", label: "Estudiantes" },
-                { value: "8+", label: "Anos de experiencia" },
-                { value: "15+", label: "Instructores certificados" },
-              ].map((stat) => (
+              {hero.stats.map((stat: { value: string; label: string }) => (
                 <div key={stat.label} className="text-center lg:text-left">
                   <div className="text-3xl font-heading font-bold text-primary">{stat.value}</div>
                   <div className="text-sm text-muted-foreground">{stat.label}</div>
@@ -75,7 +75,7 @@ export const Hero = () => {
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl">
               <img
                 src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80"
-                alt="Atleta de pole fitness realizando una pose elegante"
+                alt={hero.imageAlt}
                 className="h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-azul-900/40 to-transparent" />
@@ -86,8 +86,8 @@ export const Hero = () => {
                   <Sparkles className="h-6 w-6 text-accent" />
                 </div>
                 <div>
-                  <div className="font-heading font-semibold text-azul-900">Clase de prueba</div>
-                  <div className="text-sm text-muted-foreground">Tu primera clase gratis</div>
+                  <div className="font-heading font-semibold text-azul-900">{hero.floatingCard.title}</div>
+                  <div className="text-sm text-muted-foreground">{hero.floatingCard.subtitle}</div>
                 </div>
               </div>
             </div>

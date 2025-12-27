@@ -3,15 +3,11 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const navLinks = [
-  { label: "Inicio", href: "#hero" },
-  { label: "Clases", href: "#clases" },
-  { label: "Precios", href: "#precios" },
-  { label: "Equipo", href: "#equipo" },
-  { label: "Contacto", href: "#contacto" },
-];
+type NavbarProps = {
+  copy: Record<string, any>;
+};
 
-export const Navbar = () => {
+export const Navbar = ({ copy }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [lang, setLang] = useState<"es" | "en">("es");
 
@@ -22,6 +18,9 @@ export const Navbar = () => {
 
   const isEs = lang === "es";
 
+  const nav = copy.nav;
+  const navLinks = nav.links as Array<{ label: string; href: string }>;
+
   return (
     <header className="fixed left-0 right-0 top-0 z-50 border-b border-border bg-card/95 backdrop-blur-md">
       <nav className="container-custom flex h-16 items-center justify-between px-4 md:h-20 md:px-8">
@@ -30,7 +29,7 @@ export const Navbar = () => {
             <span className="font-heading text-lg font-bold text-primary-foreground">PS</span>
           </div>
           <span className="hidden font-heading text-lg font-semibold text-azul-900 sm:block">
-            Pole Sport Medellin
+            {nav.brand}
           </span>
         </a>
 
@@ -70,7 +69,7 @@ export const Navbar = () => {
             </a>
           </div>
           <Button variant="cta" size="default" asChild>
-            <a href="#contacto">Reserva tu clase de prueba</a>
+            <a href="#contacto">{nav.cta}</a>
           </Button>
         </div>
 
@@ -121,7 +120,7 @@ export const Navbar = () => {
               </div>
               <Button variant="cta" size="sm" asChild>
                 <a href="#contacto" onClick={() => setIsOpen(false)}>
-                  Reserva tu clase
+                  {nav.ctaShort}
                 </a>
               </Button>
             </div>

@@ -10,6 +10,7 @@ import { Testimonials } from "../components/Testimonials.tsx";
 import { Contact } from "../components/Contact.tsx";
 import { Location } from "../components/Location.tsx";
 import { Footer } from "../components/Footer.tsx";
+import copy from "@/content/copy.json";
 
 const title = "Pole Sport Medellin | Academia de Pole Fitness";
 const description =
@@ -42,6 +43,8 @@ const schema = {
   openingHours: ["Mo-Fr 06:00-21:00", "Sa 08:00-14:00"],
   priceRange: "$$",
 };
+
+const pageCopy = copy.es;
 ---
 
 <BaseLayout
@@ -60,14 +63,14 @@ const schema = {
   hreflang={hreflang}
   schema={schema}
 >
-  <Navbar client:load />
-  <Hero />
-  <ValueProposition />
-  <Team />
-  <Pricing />
-  <ClassTypes />
-  <Testimonials />
-  <Contact client:load />
-  <Location />
-  <Footer />
+  <Navbar copy={pageCopy} client:load />
+  <Hero copy={pageCopy} />
+  <ValueProposition copy={pageCopy} />
+  <Team copy={pageCopy} />
+  <Pricing copy={pageCopy} />
+  <ClassTypes copy={pageCopy} />
+  <Testimonials copy={pageCopy} />
+  <Contact copy={pageCopy} client:load />
+  <Location copy={pageCopy} />
+  <Footer copy={pageCopy} />
 </BaseLayout>

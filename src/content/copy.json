@@ -1,0 +1,554 @@
+{
+  "es": {
+    "nav": {
+      "brand": "Pole Sport Medellin",
+      "links": [
+        { "label": "Inicio", "href": "#hero" },
+        { "label": "Clases", "href": "#clases" },
+        { "label": "Precios", "href": "#precios" },
+        { "label": "Equipo", "href": "#equipo" },
+        { "label": "Contacto", "href": "#contacto" }
+      ],
+      "cta": "Reserva tu clase de prueba",
+      "ctaShort": "Reserva tu clase"
+    },
+    "hero": {
+      "badge": "Bienvenidos a Pole Sport Medellin",
+      "title": "Pole para",
+      "titleHighlight": "todos los cuerpos.",
+      "titleSuffix": "Fuerza, flexibilidad y confianza.",
+      "subtitle": "Descubre tu fuerza interior en un espacio seguro e inclusivo. Entrenamiento profesional con tecnica, pasion y comunidad.",
+      "imageAlt": "Atleta de pole fitness realizando una pose elegante",
+      "ctaPrimary": "Reserva tu clase de prueba",
+      "ctaSecondary": "Ver tipos de clases",
+      "stats": [
+        { "value": "500+", "label": "Estudiantes" },
+        { "value": "8+", "label": "Anos de experiencia" },
+        { "value": "15+", "label": "Instructores certificados" }
+      ],
+      "floatingCard": {
+        "title": "Clase de prueba",
+        "subtitle": "Tu primera clase gratis"
+      }
+    },
+    "value": {
+      "title": "Por que elegirnos?",
+      "subtitle": "En Pole Sport Medellin combinamos pasion, profesionalismo y un ambiente acogedor para ayudarte a alcanzar tus metas.",
+      "values": [
+        {
+          "icon": "Shield",
+          "title": "Seguridad primero",
+          "description": "Equipos profesionales certificados, colchonetas de seguridad y tecnicas progresivas para un entrenamiento sin riesgos."
+        },
+        {
+          "icon": "Heart",
+          "title": "Inclusividad",
+          "description": "Todos los cuerpos son bienvenidos. Clases adaptadas a todos los niveles, edades y capacidades fisicas."
+        },
+        {
+          "icon": "Users",
+          "title": "Comunidad",
+          "description": "Mas que una academia, somos una familia. Apoyo mutuo, eventos y conexiones que duran toda la vida."
+        },
+        {
+          "icon": "Target",
+          "title": "Tecnica profesional",
+          "description": "Instructores certificados internacionalmente con metodologia progresiva y enfoque en fundamentos solidos."
+        }
+      ],
+      "ceo": {
+        "title": "Conoce a nuestra fundadora",
+        "quote1": "Funde Pole Sport Medellin con la vision de crear un espacio donde cualquier persona pudiera descubrir la magia del pole fitness. Despues de anos de entrenamiento y competencias internacionales, quise traer esta disciplina a mi ciudad de una manera profesional, segura y accesible para todos.",
+        "quote2": "Cada estudiante que entra por nuestras puertas es parte de nuestra familia. Ver sus transformaciones fisicas y emocionales es lo que nos impulsa cada dia.",
+        "name": "[Nombre de la CEO]",
+        "role": "Fundadora & Directora | Certificada IPSF",
+        "image": "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=600&q=80",
+        "imageAlt": "Retrato de la fundadora de Pole Sport Medellin"
+      }
+    },
+    "team": {
+      "title": "Nuestro equipo de instructores",
+      "subtitle": "Instructores certificados internacionalmente con anos de experiencia en competencias y ensenanza profesional.",
+      "imageAltTemplate": "Retrato de {name}, {role}",
+      "cta": "Reserva tu clase de prueba",
+      "instructors": [
+        {
+          "name": "Maria Gonzalez",
+          "role": "Instructora Senior de Pole Sport",
+          "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80",
+          "instagram": "@maria.pole"
+        },
+        {
+          "name": "Carlos Restrepo",
+          "role": "Instructor de Flexibilidad",
+          "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+          "instagram": "@carlos.flex"
+        },
+        {
+          "name": "Valentina Mejia",
+          "role": "Instructora de Pole Dancing",
+          "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80",
+          "instagram": "@vale.dance"
+        },
+        {
+          "name": "Andres Rios",
+          "role": "Instructor de Pole Sport",
+          "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80",
+          "instagram": "@andres.pole"
+        }
+      ]
+    },
+    "pricing": {
+      "title": "Planes y precios",
+      "subtitle": "Elige el plan que mejor se adapte a tus objetivos. Todos incluyen acceso a nuestras instalaciones de primera clase.",
+      "popularBadge": "Mas popular",
+      "selectPlan": "Elegir plan",
+      "learnMore": "Conocer mas sobre los planes",
+      "plans": [
+        {
+          "name": "Basico",
+          "price": "$XXX.XXX",
+          "period": "/mes",
+          "description": "Perfecto para comenzar tu viaje en el pole fitness",
+          "features": ["4 clases al mes", "Acceso a clases grupales", "Equipamiento incluido", "Horarios flexibles"],
+          "popular": false
+        },
+        {
+          "name": "Intermedio",
+          "price": "$XXX.XXX",
+          "period": "/mes",
+          "description": "Para quienes buscan progresar mas rapido",
+          "features": [
+            "8 clases al mes",
+            "Acceso a todas las modalidades",
+            "1 clase de flexibilidad incluida",
+            "Practica libre (1 hora/semana)",
+            "Descuento en eventos"
+          ],
+          "popular": true
+        },
+        {
+          "name": "Ilimitado",
+          "price": "$XXX.XXX",
+          "period": "/mes",
+          "description": "Acceso total para los mas dedicados",
+          "features": [
+            "Clases ilimitadas",
+            "Acceso a todas las modalidades",
+            "Practica libre ilimitada",
+            "Descuentos exclusivos",
+            "Prioridad en inscripciones",
+            "Acceso a workshops gratuitos"
+          ],
+          "popular": false
+        }
+      ]
+    },
+    "classTypes": {
+      "title": "Tipos de clases",
+      "subtitle": "Ofrecemos diferentes modalidades para que encuentres la que mejor conecte contigo y tus objetivos.",
+      "imageAltTemplate": "Clase de {title} en Pole Sport Medellin",
+      "items": [
+        {
+          "icon": "Sparkles",
+          "title": "Pole Sport",
+          "description": "Enfoque atletico y tecnico. Desarrolla fuerza, resistencia y aprende figuras que desafian la gravedad. Ideal para quienes buscan un entrenamiento completo.",
+          "image": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80",
+          "level": "Todos los niveles"
+        },
+        {
+          "icon": "Flame",
+          "title": "Pole Dancing",
+          "description": "Expresion artistica y sensualidad. Combina movimientos de pole con coreografias fluidas. Conecta con tu cuerpo y libera tu creatividad.",
+          "image": "https://images.unsplash.com/photo-1508215885820-4585e56135c8?w=600&q=80",
+          "level": "Principiante a avanzado"
+        },
+        {
+          "icon": "Wind",
+          "title": "Flexibilidad",
+          "description": "Mejora tu rango de movimiento y previene lesiones. Estiramientos activos y pasivos para complementar tu entrenamiento de pole.",
+          "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80",
+          "level": "Todos los niveles"
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "Lo que dicen nuestros estudiantes",
+      "subtitle": "Historias reales de transformacion fisica y emocional en nuestra comunidad.",
+      "imageAltTemplate": "Foto de {name}",
+      "items": [
+        {
+          "name": "Laura Martinez",
+          "role": "Estudiante - 2 anos",
+          "content": "Llegue sin ninguna experiencia y con miedo. Hoy puedo hacer figuras que nunca imagine. El ambiente es increible y las instructoras son muy pacientes y profesionales.",
+          "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80",
+          "rating": 5
+        },
+        {
+          "name": "Camila Restrepo",
+          "role": "Estudiante - 1 ano",
+          "content": "Pole Sport Medellin cambio mi vida. No solo mi cuerpo se transformo, tambien mi confianza. Es un espacio seguro donde todas nos apoyamos.",
+          "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80",
+          "rating": 5
+        },
+        {
+          "name": "Diego Hernandez",
+          "role": "Estudiante - 6 meses",
+          "content": "Pense que el pole era solo para mujeres, pero me recibieron con los brazos abiertos. El entrenamiento es intenso y muy gratificante. 100% recomendado.",
+          "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80",
+          "rating": 5
+        }
+      ]
+    },
+    "contact": {
+      "title": "Lista para comenzar?",
+      "subtitle": "Reserva tu clase de prueba gratuita y descubre el mundo del pole fitness. Escribenos y te contactaremos en menos de 24 horas.",
+      "info": {
+        "whatsappLabel": "WhatsApp",
+        "whatsapp": "+57 XXX XXX XXXX",
+        "whatsappLink": "https://wa.me/57XXXXXXXXXX",
+        "emailLabel": "Email",
+        "email": "info@polesportmedellin.com",
+        "hoursLabel": "Horarios",
+        "hours": ["Lunes a Viernes: 6:00 AM - 9:00 PM", "Sabados: 8:00 AM - 2:00 PM"]
+      },
+      "form": {
+        "title": "Reserva tu clase de prueba",
+        "nameLabel": "Nombre completo",
+        "namePlaceholder": "Tu nombre",
+        "phoneLabel": "Telefono / WhatsApp",
+        "phonePlaceholder": "+57 300 000 0000",
+        "emailLabel": "Correo electronico",
+        "emailPlaceholder": "tu@email.com",
+        "messageLabel": "Mensaje (opcional)",
+        "messagePlaceholder": "En que clase estas interesada? Tienes alguna pregunta?",
+        "submit": "Enviar mensaje",
+        "submitting": "Enviando...",
+        "privacy": "Al enviar este formulario aceptas nuestra politica de privacidad."
+      },
+      "toast": {
+        "title": "Mensaje enviado!",
+        "description": "Nos pondremos en contacto contigo pronto."
+      }
+    },
+    "location": {
+      "title": "Nuestra ubicacion",
+      "subtitle": "Estamos ubicados en el corazon de Medellin, con facil acceso desde cualquier punto de la ciudad.",
+      "addressTitle": "Direccion",
+      "addressLines": ["[Calle XX # XX-XX]", "Barrio [Nombre del Barrio]", "Medellin, Antioquia"],
+      "mapLinkText": "Ver en Google Maps ->",
+      "mapLink": "https://maps.google.com",
+      "mapTitle": "Mapa de ubicacion",
+      "mapPlaceholder": "[Integrar Google Maps aqui]"
+    },
+    "footer": {
+      "ctaTitle": "Lista para transformar tu vida?",
+      "ctaText": "Da el primer paso hacia una version mas fuerte, flexible y segura de ti misma. Tu clase de prueba es gratuita.",
+      "ctaButton": "Reserva tu clase de prueba",
+      "brandText": "Academia de pole fitness lider en Medellin. Transformando vidas a traves del movimiento, la fuerza y la comunidad desde 2016.",
+      "headings": {
+        "empresa": "Empresa",
+        "servicios": "Servicios",
+        "legal": "Legal"
+      },
+      "links": {
+        "empresa": [
+          { "label": "Sobre nosotros", "href": "#" },
+          { "label": "Equipo", "href": "#equipo" },
+          { "label": "Blog", "href": "#" },
+          { "label": "Trabaja con nosotros", "href": "#" }
+        ],
+        "servicios": [
+          { "label": "Pole Sport", "href": "#clases" },
+          { "label": "Pole Dancing", "href": "#clases" },
+          { "label": "Flexibilidad", "href": "#clases" },
+          { "label": "Eventos privados", "href": "#contacto" }
+        ],
+        "legal": [
+          { "label": "Terminos y condiciones", "href": "#" },
+          { "label": "Politica de privacidad", "href": "#" },
+          { "label": "Politica de cancelacion", "href": "#" }
+        ]
+      },
+      "copyright": "(c) {year} Pole Sport Medellin. Todos los derechos reservados.",
+      "made": "Hecho con amor",
+      "madeSuffix": "en Medellin"
+    }
+  },
+  "en": {
+    "nav": {
+      "brand": "Pole Sport Medellin",
+      "links": [
+        { "label": "Home", "href": "#hero" },
+        { "label": "Classes", "href": "#clases" },
+        { "label": "Pricing", "href": "#precios" },
+        { "label": "Team", "href": "#equipo" },
+        { "label": "Contact", "href": "#contacto" }
+      ],
+      "cta": "Book your trial class",
+      "ctaShort": "Book your class"
+    },
+    "hero": {
+      "badge": "Welcome to Pole Sport Medellin",
+      "title": "Pole for",
+      "titleHighlight": "every body.",
+      "titleSuffix": "Strength, flexibility, and confidence.",
+      "subtitle": "Discover your inner strength in a safe, inclusive space. Professional training with technique, passion, and community.",
+      "imageAlt": "Pole fitness athlete performing an elegant pose",
+      "ctaPrimary": "Book your trial class",
+      "ctaSecondary": "See class types",
+      "stats": [
+        { "value": "500+", "label": "Students" },
+        { "value": "8+", "label": "Years of experience" },
+        { "value": "15+", "label": "Certified instructors" }
+      ],
+      "floatingCard": {
+        "title": "Trial class",
+        "subtitle": "Your first class is free"
+      }
+    },
+    "value": {
+      "title": "Why choose us?",
+      "subtitle": "At Pole Sport Medellin we combine passion, professionalism, and a welcoming environment to help you reach your goals.",
+      "values": [
+        {
+          "icon": "Shield",
+          "title": "Safety first",
+          "description": "Certified professional equipment, safety mats, and progressive techniques for a safe training experience."
+        },
+        {
+          "icon": "Heart",
+          "title": "Inclusivity",
+          "description": "Every body is welcome. Classes adapted to all levels, ages, and physical abilities."
+        },
+        {
+          "icon": "Users",
+          "title": "Community",
+          "description": "More than a studio, we are a family. Mutual support, events, and connections that last."
+        },
+        {
+          "icon": "Target",
+          "title": "Professional technique",
+          "description": "Internationally certified instructors with progressive methodology and solid fundamentals."
+        }
+      ],
+      "ceo": {
+        "title": "Meet our founder",
+        "quote1": "I founded Pole Sport Medellin to create a space where anyone could discover the magic of pole fitness. After years of training and international competitions, I wanted to bring this discipline to my city in a professional, safe, and accessible way for everyone.",
+        "quote2": "Every student who walks through our doors is part of our family. Seeing their physical and emotional transformations is what drives us every day.",
+        "name": "[CEO name]",
+        "role": "Founder & Director | IPSF Certified",
+        "image": "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=600&q=80",
+        "imageAlt": "Portrait of the founder of Pole Sport Medellin"
+      }
+    },
+    "team": {
+      "title": "Our instructor team",
+      "subtitle": "Internationally certified instructors with years of experience in competitions and professional teaching.",
+      "imageAltTemplate": "Portrait of {name}, {role}",
+      "cta": "Book your trial class",
+      "instructors": [
+        {
+          "name": "Maria Gonzalez",
+          "role": "Senior Pole Sport Instructor",
+          "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80",
+          "instagram": "@maria.pole"
+        },
+        {
+          "name": "Carlos Restrepo",
+          "role": "Flexibility Instructor",
+          "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+          "instagram": "@carlos.flex"
+        },
+        {
+          "name": "Valentina Mejia",
+          "role": "Pole Dancing Instructor",
+          "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80",
+          "instagram": "@vale.dance"
+        },
+        {
+          "name": "Andres Rios",
+          "role": "Pole Sport Instructor",
+          "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80",
+          "instagram": "@andres.pole"
+        }
+      ]
+    },
+    "pricing": {
+      "title": "Plans and pricing",
+      "subtitle": "Choose the plan that best fits your goals. All plans include access to our world-class facilities.",
+      "popularBadge": "Most popular",
+      "selectPlan": "Choose plan",
+      "learnMore": "Learn more about plans",
+      "plans": [
+        {
+          "name": "Basic",
+          "price": "$XXX.XXX",
+          "period": "/month",
+          "description": "Perfect to start your pole fitness journey",
+          "features": ["4 classes per month", "Access to group classes", "Equipment included", "Flexible schedules"],
+          "popular": false
+        },
+        {
+          "name": "Intermediate",
+          "price": "$XXX.XXX",
+          "period": "/month",
+          "description": "For those who want to progress faster",
+          "features": [
+            "8 classes per month",
+            "Access to all modalities",
+            "1 flexibility class included",
+            "Open practice (1 hour/week)",
+            "Event discounts"
+          ],
+          "popular": true
+        },
+        {
+          "name": "Unlimited",
+          "price": "$XXX.XXX",
+          "period": "/month",
+          "description": "Full access for the most dedicated",
+          "features": [
+            "Unlimited classes",
+            "Access to all modalities",
+            "Unlimited open practice",
+            "Exclusive discounts",
+            "Priority enrollment",
+            "Free workshop access"
+          ],
+          "popular": false
+        }
+      ]
+    },
+    "classTypes": {
+      "title": "Class types",
+      "subtitle": "We offer different modalities so you can find the one that best matches your goals.",
+      "imageAltTemplate": "{title} class at Pole Sport Medellin",
+      "items": [
+        {
+          "icon": "Sparkles",
+          "title": "Pole Sport",
+          "description": "Athletic and technical focus. Build strength, endurance, and learn gravity-defying moves. Ideal for a complete workout.",
+          "image": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80",
+          "level": "All levels"
+        },
+        {
+          "icon": "Flame",
+          "title": "Pole Dancing",
+          "description": "Artistic expression and flow. Combine pole movements with fluid choreography. Connect with your body and creativity.",
+          "image": "https://images.unsplash.com/photo-1508215885820-4585e56135c8?w=600&q=80",
+          "level": "Beginner to advanced"
+        },
+        {
+          "icon": "Wind",
+          "title": "Flexibility",
+          "description": "Improve your range of motion and prevent injuries. Active and passive stretching to complement your pole training.",
+          "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80",
+          "level": "All levels"
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "What our students say",
+      "subtitle": "Real stories of physical and emotional transformation in our community.",
+      "imageAltTemplate": "Photo of {name}",
+      "items": [
+        {
+          "name": "Laura Martinez",
+          "role": "Student - 2 years",
+          "content": "I arrived with no experience and fear. Today I can do moves I never imagined. The environment is amazing and the instructors are patient and professional.",
+          "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80",
+          "rating": 5
+        },
+        {
+          "name": "Camila Restrepo",
+          "role": "Student - 1 year",
+          "content": "Pole Sport Medellin changed my life. Not only my body transformed, but my confidence too. It is a safe space where we all support each other.",
+          "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80",
+          "rating": 5
+        },
+        {
+          "name": "Diego Hernandez",
+          "role": "Student - 6 months",
+          "content": "I thought pole was only for women, but they welcomed me with open arms. The training is intense and very rewarding. 100% recommended.",
+          "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80",
+          "rating": 5
+        }
+      ]
+    },
+    "contact": {
+      "title": "Ready to start?",
+      "subtitle": "Book your free trial class and discover the world of pole fitness. Message us and we will get back to you within 24 hours.",
+      "info": {
+        "whatsappLabel": "WhatsApp",
+        "whatsapp": "+57 XXX XXX XXXX",
+        "whatsappLink": "https://wa.me/57XXXXXXXXXX",
+        "emailLabel": "Email",
+        "email": "info@polesportmedellin.com",
+        "hoursLabel": "Hours",
+        "hours": ["Mon to Fri: 6:00 AM - 9:00 PM", "Sat: 8:00 AM - 2:00 PM"]
+      },
+      "form": {
+        "title": "Book your trial class",
+        "nameLabel": "Full name",
+        "namePlaceholder": "Your name",
+        "phoneLabel": "Phone / WhatsApp",
+        "phonePlaceholder": "+57 300 000 0000",
+        "emailLabel": "Email address",
+        "emailPlaceholder": "you@email.com",
+        "messageLabel": "Message (optional)",
+        "messagePlaceholder": "Which class are you interested in? Any questions?",
+        "submit": "Send message",
+        "submitting": "Sending...",
+        "privacy": "By sending this form you accept our privacy policy."
+      },
+      "toast": {
+        "title": "Message sent!",
+        "description": "We will get back to you soon."
+      }
+    },
+    "location": {
+      "title": "Our location",
+      "subtitle": "We are located in the heart of Medellin, with easy access from anywhere in the city.",
+      "addressTitle": "Address",
+      "addressLines": ["[Street XX # XX-XX]", "Neighborhood [Name]", "Medellin, Antioquia"],
+      "mapLinkText": "View on Google Maps ->",
+      "mapLink": "https://maps.google.com",
+      "mapTitle": "Location map",
+      "mapPlaceholder": "[Integrate Google Maps here]"
+    },
+    "footer": {
+      "ctaTitle": "Ready to transform your life?",
+      "ctaText": "Take the first step toward a stronger, more flexible, and more confident you. Your trial class is free.",
+      "ctaButton": "Book your trial class",
+      "brandText": "Leading pole fitness studio in Medellin. Transforming lives through movement, strength, and community since 2016.",
+      "headings": {
+        "empresa": "Company",
+        "servicios": "Services",
+        "legal": "Legal"
+      },
+      "links": {
+        "empresa": [
+          { "label": "About us", "href": "#" },
+          { "label": "Team", "href": "#equipo" },
+          { "label": "Blog", "href": "#" },
+          { "label": "Careers", "href": "#" }
+        ],
+        "servicios": [
+          { "label": "Pole Sport", "href": "#clases" },
+          { "label": "Pole Dancing", "href": "#clases" },
+          { "label": "Flexibility", "href": "#clases" },
+          { "label": "Private events", "href": "#contacto" }
+        ],
+        "legal": [
+          { "label": "Terms and conditions", "href": "#" },
+          { "label": "Privacy policy", "href": "#" },
+          { "label": "Cancellation policy", "href": "#" }
+        ]
+      },
+      "copyright": "(c) {year} Pole Sport Medellin. All rights reserved.",
+      "made": "Made with love",
+      "madeSuffix": "in Medellin"
+    }
+  }
+}

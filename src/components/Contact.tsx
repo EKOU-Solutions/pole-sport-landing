@@ -6,9 +6,14 @@ import { useToast } from "@/hooks/use-toast";
 import { Toaster } from "@/components/ui/toaster";
 import { Send, Phone, Mail, Clock } from "lucide-react";
 
-export const Contact = () => {
+type ContactProps = {
+  copy: Record<string, any>;
+};
+
+export const Contact = ({ copy }: ContactProps) => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const contactCopy = copy.contact;
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -17,8 +22,8 @@ export const Contact = () => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     toast({
-      title: "Mensaje enviado",
-      description: "Nos pondremos en contacto contigo pronto.",
+      title: contactCopy.toast.title,
+      description: contactCopy.toast.description,
     });
 
     setIsSubmitting(false);
@@ -30,13 +35,8 @@ export const Contact = () => {
       <div className="container-custom">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
-            <h2 className="mb-4 text-3xl font-heading font-bold md:text-4xl">
-              Lista para comenzar?
-            </h2>
-            <p className="mb-8 text-lg text-muted-foreground">
-              Reserva tu clase de prueba gratuita y descubre el mundo del pole
-              fitness. Escribenos y te contactaremos en menos de 24 horas.
-            </p>
+            <h2 className="mb-4 text-3xl font-heading font-bold md:text-4xl">{contactCopy.title}</h2>
+            <p className="mb-8 text-lg text-muted-foreground">{contactCopy.subtitle}</p>
 
             <div className="space-y-6">
               <div className="flex items-start gap-4">
@@ -44,12 +44,12 @@ export const Contact = () => {
                   <Phone className="h-5 w-5 text-primary" strokeWidth={2} />
                 </div>
                 <div>
-                  <div className="font-heading font-semibold text-azul-900">WhatsApp</div>
+                  <div className="font-heading font-semibold text-azul-900">{contactCopy.info.whatsappLabel}</div>
                   <a
-                    href="https://wa.me/57XXXXXXXXXX"
+                    href={contactCopy.info.whatsappLink}
                     className="text-muted-foreground transition-colors hover:text-accent"
                   >
-                    +57 XXX XXX XXXX
+                    {contactCopy.info.whatsapp}
                   </a>
                 </div>
               </div>
@@ -59,12 +59,12 @@ export const Contact = () => {
                   <Mail className="h-5 w-5 text-primary" strokeWidth={2} />
                 </div>
                 <div>
-                  <div className="font-heading font-semibold text-azul-900">Email</div>
+                  <div className="font-heading font-semibold text-azul-900">{contactCopy.info.emailLabel}</div>
                   <a
-                    href="mailto:info@polesportmedellin.com"
+                    href={`mailto:${contactCopy.info.email}`}
                     className="text-muted-foreground transition-colors hover:text-accent"
                   >
-                    info@polesportmedellin.com
+                    {contactCopy.info.email}
                   </a>
                 </div>
               </div>
@@ -74,11 +74,14 @@ export const Contact = () => {
                   <Clock className="h-5 w-5 text-primary" strokeWidth={2} />
                 </div>
                 <div>
-                  <div className="font-heading font-semibold text-azul-900">Horarios</div>
+                  <div className="font-heading font-semibold text-azul-900">{contactCopy.info.hoursLabel}</div>
                   <div className="text-muted-foreground">
-                    Lunes a viernes: 6:00 AM - 9:00 PM
-                    <br />
-                    Sabados: 8:00 AM - 2:00 PM
+                    {contactCopy.info.hours.map((line: string, index: number) => (
+                      <span key={line}>
+                        {line}
+                        {index < contactCopy.info.hours.length - 1 && <br />}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -86,67 +89,71 @@ export const Contact = () => {
           </div>
 
           <div className="card-elevated p-6 lg:p-8">
-            <h3 className="mb-6 text-xl font-heading font-semibold">Reserva tu clase de prueba</h3>
+            <h3 className="mb-6 text-xl font-heading font-semibold">{contactCopy.form.title}</h3>
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
                   <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-foreground">
-                    Nombre completo
+                    {contactCopy.form.nameLabel}
                   </label>
-                  <Input id="name" name="name" required placeholder="Tu nombre" className="focus-ring" />
+                  <Input
+                    id="name"
+                    name="name"
+                    required
+                    placeholder={contactCopy.form.namePlaceholder}
+                    className="focus-ring"
+                  />
                 </div>
                 <div>
                   <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-foreground">
-                    Telefono / WhatsApp
+                    {contactCopy.form.phoneLabel}
                   </label>
                   <Input
                     id="phone"
                     name="phone"
                     type="tel"
                     required
-                    placeholder="+57 300 000 0000"
+                    placeholder={contactCopy.form.phonePlaceholder}
                     className="focus-ring"
                   />
                 </div>
               </div>
               <div>
                 <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-foreground">
-                  Correo electronico
+                  {contactCopy.form.emailLabel}
                 </label>
                 <Input
                   id="email"
                   name="email"
                   type="email"
                   required
-                  placeholder="tu@email.com"
+                  placeholder={contactCopy.form.emailPlaceholder}
                   className="focus-ring"
                 />
               </div>
               <div>
                 <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-foreground">
-                  Mensaje (opcional)
+                  {contactCopy.form.messageLabel}
                 </label>
                 <Textarea
                   id="message"
                   name="message"
                   rows={4}
-                  placeholder="En que clase estas interesada? Tienes alguna pregunta?"
+                  placeholder={contactCopy.form.messagePlaceholder}
                   className="focus-ring resize-none"
                 />
               </div>
               <Button type="submit" variant="cta" size="lg" className="w-full" disabled={isSubmitting}>
                 {isSubmitting ? (
-                  "Enviando..."
+                  contactCopy.form.submitting
                 ) : (
                   <>
-                    Enviar mensaje
+                    {contactCopy.form.submit}
                     <Send className="h-4 w-4" />
                   </>
                 )}
               </Button>
-              <p className="text-center text-xs text-muted-foreground">
-                Al enviar este formulario aceptas nuestra politica de privacidad.
-              </p>
+              <p className="text-center text-xs text-muted-foreground">{contactCopy.form.privacy}</p>
             </form>
           </div>
         </div>
