@@ -65,7 +65,77 @@ const {
     <main id="main-content">
       <slot />
     </main>
-    <script type="module" src="/src/scripts/smooth-scroll.ts"></script>
+    <script is:inline>
+      (() => {
+        if (typeof window === "undefined") return;
+        const SCROLL_DURATION = 700;
+        const EXTRA_OFFSET = 12;
+
+        const easeInOutCubic = (t) =>
+          t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+        const getHeaderOffset = () => {
+          const header = document.querySelector("[data-site-header]");
+          const height = header ? header.getBoundingClientRect().height : 0;
+          return height + EXTRA_OFFSET;
+        };
+
+        const smoothScrollTo = (targetY, duration = SCROLL_DURATION) => {
+          const startY = window.scrollY || window.pageYOffset;
+          const diff = targetY - startY;
+          if (Math.abs(diff) < 1) return;
+
+          let startTime;
+          const step = (timestamp) => {
+            if (startTime === undefined) startTime = timestamp;
+            const elapsed = timestamp - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = easeInOutCubic(progress);
+            window.scrollTo(0, startY + diff * eased);
+            if (elapsed < duration) requestAnimationFrame(step);
+          };
+
+          requestAnimationFrame(step);
+        };
+
+        const scrollToHash = (hash) => {
+          if (!hash || hash === "#") return false;
+          const id = decodeURIComponent(hash.slice(1));
+          const section = document.getElementById(id);
+          if (!section) return false;
+
+          const targetTop = section.getBoundingClientRect().top + window.scrollY;
+          const offsetTop = Math.max(0, targetTop - getHeaderOffset());
+          smoothScrollTo(offsetTop);
+          return true;
+        };
+
+        document.addEventListener("click", (event) => {
+          if (event.defaultPrevented) return;
+          if (event.button !== 0) return;
+          if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+          const target = event.target;
+          const element = target instanceof Element ? target : target?.parentElement;
+          if (!element) return;
+
+          const anchor = element.closest('a[href^="#"]');
+          if (!anchor) return;
+          if (anchor.target && anchor.target !== "_self") return;
+
+          const href = anchor.getAttribute("href");
+          if (!href || !href.startsWith("#")) return;
+
+          event.preventDefault();
+          if (!scrollToHash(href)) return;
+          history.pushState(null, "", href);
+        });
+
+        window.addEventListener("hashchange", () => {
+          scrollToHash(window.location.hash);
+        });
+      })();
+    </script>
   </body>
 </html>
 
