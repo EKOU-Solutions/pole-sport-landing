@@ -1,0 +1,57 @@
+﻿---
+const { lang = "es" } = Astro.props;
+const isEs = lang === "es";
+---
+
+<header class="sticky top-0 z-50 border-b border-azul-200/60 bg-azul-50/90 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+    <a href={isEs ? "/es" : "/en"} class="font-display text-lg font-semibold text-azul-900">
+      Pole Sport Medellin
+    </a>
+    <nav class="hidden items-center gap-6 text-sm font-semibold text-azul-900 md:flex">
+      <a href={isEs ? "/es#programas" : "/en#programs"} class="hover:text-azul-600">
+        {isEs ? "Programas" : "Programs"}
+      </a>
+      <a href={isEs ? "/es#precios" : "/en#pricing"} class="hover:text-azul-600">
+        {isEs ? "Precios" : "Pricing"}
+      </a>
+      <a href={isEs ? "/es#equipo" : "/en#team"} class="hover:text-azul-600">
+        {isEs ? "Equipo" : "Team"}
+      </a>
+      <a href={isEs ? "/es#contacto" : "/en#contact"} class="hover:text-azul-600">
+        {isEs ? "Contacto" : "Contact"}
+      </a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a
+        href="/es"
+        aria-current={isEs ? "page" : undefined}
+        class={`rounded-full border px-3 py-1 text-xs font-semibold ${
+          isEs
+            ? "border-azul-600 bg-azul-600 text-white"
+            : "border-azul-200 text-azul-900"
+        }`}
+      >
+        ES
+      </a>
+      <a
+        href="/en"
+        aria-current={isEs ? undefined : "page"}
+        class={`rounded-full border px-3 py-1 text-xs font-semibold ${
+          isEs
+            ? "border-azul-200 text-azul-900"
+            : "border-azul-600 bg-azul-600 text-white"
+        }`}
+      >
+        EN
+      </a>
+      <a
+        href="TODO_WHATSAPP_LINK"
+        class="hidden rounded-full bg-turquesa-600 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white shadow-sm hover:bg-azul-600 md:inline-flex"
+      >
+        {isEs ? "Reserva tu clase" : "Book a trial class"}
+      </a>
+    </div>
+  </div>
+</header>
+

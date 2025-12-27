@@ -1,0 +1,346 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "Pole Sport Medellin | Pole Fitness Classes";
+const description =
+  "Learn pole fitness in Medellin with certified instructors. Book a trial class and enjoy a safe, inclusive experience.";
+const ogTitle = "Pole Sport Medellin | Pole Fitness Classes";
+const ogDescription =
+  "Train pole fitness in Medellin with technique, safety, and an inclusive atmosphere. Book your trial class today.";
+const canonical = "https://TODO_DOMINIO/en";
+const hreflang = [
+  { lang: "es-CO", href: "https://TODO_DOMINIO/es" },
+  { lang: "en", href: "https://TODO_DOMINIO/en" },
+];
+
+const plans = [
+  {
+    name: "Basic Plan",
+    price: "TODO_PRICE",
+    details: ["TODO_CLASSES_PER_WEEK", "Pole fundamentals", "Weekly check-ins"],
+  },
+  {
+    name: "Pro Plan",
+    price: "TODO_PRICE",
+    details: ["TODO_CLASSES_PER_WEEK", "Pole + flexibility", "Monthly bonus class"],
+  },
+  {
+    name: "Elite Plan",
+    price: "TODO_PRICE",
+    details: ["TODO_CLASSES_PER_WEEK", "Full personalization", "Workshop access"],
+  },
+];
+
+const classTypes = [
+  {
+    name: "Pole Sport",
+    description: "Technique and strength progressions with safe coaching.",
+  },
+  {
+    name: "Pole Dancing",
+    description: "Dynamic choreography to build confidence and expression.",
+  },
+  {
+    name: "Flexibility",
+    description: "Mobility, stretching, and injury prevention.",
+  },
+];
+
+const testimonials = [
+  {
+    quote: "TODO_TESTIMONIAL_1",
+    name: "TODO_NAME_1",
+  },
+  {
+    quote: "TODO_TESTIMONIAL_2",
+    name: "TODO_NAME_2",
+  },
+  {
+    quote: "TODO_TESTIMONIAL_3",
+    name: "TODO_NAME_3",
+  },
+];
+
+const instructors = [
+  {
+    name: "TODO_INSTRUCTOR_1",
+    specialty: "Pole Sport",
+  },
+  {
+    name: "TODO_INSTRUCTOR_2",
+    specialty: "Flexibility",
+  },
+  {
+    name: "TODO_INSTRUCTOR_3",
+    specialty: "Pole Dancing",
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogTitle={ogTitle}
+  ogDescription={ogDescription}
+  canonical={canonical}
+  lang="en"
+  hreflang={hreflang}
+>
+  <section class="bg-azul-50">
+    <div class="mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <div class="space-y-6">
+        <p class="inline-flex items-center rounded-full bg-azul-200 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-azul-900">
+          Pole Sport Medellin
+        </p>
+        <h1 class="text-4xl font-semibold leading-tight text-azul-900 md:text-5xl">
+          Pole for every body. Strength, flexibility, and confidence.
+        </h1>
+        <p class="text-lg text-neutral-500">
+          Level-based methodology, certified instructors, and a 100% safe, inclusive environment.
+        </p>
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
+          <a
+            href="TODO_WHATSAPP_LINK"
+            class="inline-flex items-center justify-center rounded-full bg-turquesa-600 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow-soft hover:bg-azul-600"
+          >
+            Book your trial class
+          </a>
+          <a
+            href="#pricing"
+            class="inline-flex items-center justify-center rounded-full border border-azul-600 px-6 py-3 text-sm font-semibold text-azul-600 hover:bg-azul-50"
+          >
+            View plans
+          </a>
+        </div>
+        <p class="text-sm text-neutral-500">
+          TODO_WHATSAPP_NUMBER - TODO_EMAIL
+        </p>
+      </div>
+      <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-azul-200 via-azul-400 to-azul-600 p-8 text-white shadow-soft">
+        <div class="space-y-4">
+          <p class="text-xs font-semibold uppercase tracking-wide">Train with confidence</p>
+          <h2 class="text-2xl font-semibold">Level-based classes</h2>
+          <p class="text-sm text-white/80">
+            TODO_HERO_IMAGE (insert real training photo)
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="value" class="bg-white">
+    <div class="mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+      <div class="space-y-4">
+        <p class="text-sm font-semibold uppercase tracking-wide text-azul-600">Our value</p>
+        <h2 class="text-3xl font-semibold text-azul-900">
+          Technique, safety, and measurable progress every class.
+        </h2>
+        <p class="text-neutral-500">
+          We coach from fundamentals to advanced levels, with personal guidance and plans that respect your pace.
+        </p>
+      </div>
+      <div class="rounded-3xl border border-azul-200 bg-azul-50 p-8 shadow-soft">
+        <div class="flex flex-col gap-4 md:flex-row md:items-center">
+          <div class="h-24 w-24 rounded-2xl bg-azul-200 text-center text-xs font-semibold uppercase text-azul-900">
+            TODO_CEO_PHOTO
+          </div>
+          <div>
+            <p class="text-lg font-semibold text-azul-900">TODO_CEO_NAME</p>
+            <p class="text-sm text-neutral-500">TODO_CEO_BIO</p>
+          </div>
+        </div>
+        <div class="mt-6 grid gap-4 text-sm text-azul-900 md:grid-cols-2">
+          <div class="rounded-xl bg-white p-4">
+            <p class="font-semibold">Real progress</p>
+            <p class="text-neutral-500">Guided routines to measure gains.</p>
+          </div>
+          <div class="rounded-xl bg-white p-4">
+            <p class="font-semibold">Inclusive community</p>
+            <p class="text-neutral-500">A safe space for every body.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="team" class="bg-azul-50">
+    <div class="mx-auto max-w-6xl px-6 py-16">
+      <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-wide text-azul-600">Team</p>
+          <h2 class="text-3xl font-semibold text-azul-900">Certified instructors</h2>
+        </div>
+        <a
+          href="TODO_WHATSAPP_LINK"
+          class="inline-flex items-center justify-center rounded-full bg-azul-600 px-5 py-2 text-sm font-semibold text-white hover:bg-turquesa-600"
+        >
+          Book your trial class
+        </a>
+      </div>
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        {instructors.map((instructor) => (
+          <div class="rounded-2xl border border-azul-200 bg-white p-6 shadow-soft">
+            <div class="h-32 rounded-xl bg-azul-200 text-xs font-semibold uppercase text-azul-900">
+              TODO_INSTRUCTOR_PHOTO
+            </div>
+            <p class="mt-4 text-lg font-semibold text-azul-900">{instructor.name}</p>
+            <p class="text-sm text-neutral-500">{instructor.specialty}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="bg-white">
+    <div class="mx-auto max-w-6xl px-6 py-16">
+      <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-wide text-azul-600">Pricing</p>
+          <h2 class="text-3xl font-semibold text-azul-900">Flexible plans for every level</h2>
+        </div>
+        <a href="/en/pricing" class="text-sm font-semibold text-azul-600 hover:text-azul-900">
+          Learn more about plans
+        </a>
+      </div>
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        {plans.map((plan, index) => (
+          <div
+            class={`rounded-2xl border p-6 shadow-soft ${
+              index === 1 ? "border-turquesa-600 bg-azul-50" : "border-azul-200 bg-white"
+            }`}
+          >
+            <p class="text-sm font-semibold uppercase tracking-wide text-azul-600">{plan.name}</p>
+            <p class="mt-3 text-3xl font-semibold text-azul-900">{plan.price}</p>
+            <ul class="mt-4 space-y-2 text-sm text-neutral-500">
+              {plan.details.map((detail) => (
+                <li>- {detail}</li>
+              ))}
+            </ul>
+            <a
+              href="TODO_WHATSAPP_LINK"
+              class="mt-6 inline-flex w-full items-center justify-center rounded-full bg-azul-600 px-4 py-2 text-sm font-semibold text-white hover:bg-turquesa-600"
+            >
+              Choose this plan
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="programs" class="bg-azul-50">
+    <div class="mx-auto max-w-6xl px-6 py-16">
+      <div class="max-w-2xl">
+        <p class="text-sm font-semibold uppercase tracking-wide text-azul-600">Class types</p>
+        <h2 class="text-3xl font-semibold text-azul-900">Programs for every goal</h2>
+      </div>
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        {classTypes.map((classType) => (
+          <div class="rounded-2xl bg-white p-6 shadow-soft">
+            <p class="text-lg font-semibold text-azul-900">{classType.name}</p>
+            <p class="mt-2 text-sm text-neutral-500">{classType.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="bg-white">
+    <div class="mx-auto max-w-6xl px-6 py-16">
+      <div class="max-w-2xl">
+        <p class="text-sm font-semibold uppercase tracking-wide text-azul-600">Testimonials</p>
+        <h2 class="text-3xl font-semibold text-azul-900">Real stories from our community</h2>
+      </div>
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        {testimonials.map((testimonial) => (
+          <div class="rounded-2xl border border-azul-200 bg-azul-50 p-6">
+            <p class="text-sm text-neutral-500">"{testimonial.quote}"</p>
+            <p class="mt-4 text-sm font-semibold text-azul-900">{testimonial.name}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="bg-azul-50">
+    <div class="mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-[1fr_1fr] lg:items-start">
+      <div class="space-y-4">
+        <p class="text-sm font-semibold uppercase tracking-wide text-azul-600">Contact</p>
+        <h2 class="text-3xl font-semibold text-azul-900">Book your class today</h2>
+        <p class="text-neutral-500">
+          Message us on WhatsApp or leave your details for personalized guidance.
+        </p>
+        <div class="rounded-2xl border border-azul-200 bg-white p-6">
+          <p class="text-sm font-semibold text-azul-900">WhatsApp</p>
+          <p class="text-sm text-neutral-500">TODO_WHATSAPP_NUMBER</p>
+          <a
+            href="TODO_WHATSAPP_LINK"
+            class="mt-4 inline-flex items-center justify-center rounded-full bg-turquesa-600 px-4 py-2 text-sm font-semibold text-white hover:bg-azul-600"
+          >
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+      <form class="space-y-4 rounded-3xl border border-azul-200 bg-white p-8 shadow-soft">
+        <div>
+          <label for="name" class="text-sm font-semibold text-azul-900">Name</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            placeholder="Your name"
+            class="mt-2 w-full rounded-xl border border-azul-200 px-4 py-2 text-sm focus:border-azul-600 focus:outline-none focus:ring-2 focus:ring-azul-200"
+            required
+          />
+        </div>
+        <div>
+          <label for="email" class="text-sm font-semibold text-azul-900">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="you@email.com"
+            class="mt-2 w-full rounded-xl border border-azul-200 px-4 py-2 text-sm focus:border-azul-600 focus:outline-none focus:ring-2 focus:ring-azul-200"
+            required
+          />
+        </div>
+        <div>
+          <label for="message" class="text-sm font-semibold text-azul-900">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            placeholder="Tell us what you'd like to achieve"
+            class="mt-2 w-full rounded-xl border border-azul-200 px-4 py-2 text-sm focus:border-azul-600 focus:outline-none focus:ring-2 focus:ring-azul-200"
+            required
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          class="w-full rounded-full bg-azul-600 px-4 py-3 text-sm font-semibold text-white hover:bg-turquesa-600"
+        >
+          Send message
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <section id="location" class="bg-white">
+    <div class="mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <div class="space-y-4">
+        <p class="text-sm font-semibold uppercase tracking-wide text-azul-600">Location</p>
+        <h2 class="text-3xl font-semibold text-azul-900">We're in Medellin</h2>
+        <p class="text-neutral-500">TODO_FULL_ADDRESS</p>
+        <a
+          href="TODO_MAPS_LINK"
+          class="inline-flex items-center justify-center rounded-full border border-azul-600 px-4 py-2 text-sm font-semibold text-azul-600 hover:bg-azul-50"
+        >
+          View on Google Maps
+        </a>
+      </div>
+      <div class="rounded-3xl border border-azul-200 bg-azul-50 p-6 text-sm text-neutral-500">
+        TODO_EMBEDDED_MAP
+      </div>
+    </div>
+  </section>
+</BaseLayout>

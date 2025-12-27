@@ -1,0 +1,70 @@
+﻿---
+import "../styles/global.css";
+
+type Hreflang = { lang: string; href: string };
+
+const {
+  title,
+  description,
+  keywords,
+  author,
+  ogTitle,
+  ogDescription,
+  ogImage,
+  ogUrl,
+  twitterSite,
+  twitterImage,
+  canonical,
+  lang = "es",
+  hreflang = [],
+  schema,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {keywords && <meta name="keywords" content={keywords} />}
+    {author && <meta name="author" content={author} />}
+    <meta property="og:title" content={ogTitle ?? title} />
+    <meta property="og:description" content={ogDescription ?? description} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta property="og:url" content={ogUrl ?? canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={lang === "es" ? "es_CO" : "en_US"} />
+    <meta name="twitter:card" content="summary_large_image" />
+    {twitterSite && <meta name="twitter:site" content={twitterSite} />}
+    {(twitterImage || ogImage) && (
+      <meta name="twitter:image" content={twitterImage ?? ogImage} />
+    )}
+    <link rel="canonical" href={canonical} />
+    {hreflang.map((item: Hreflang) => (
+      <link rel="alternate" hreflang={item.lang} href={item.href} />
+    ))}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+  </head>
+  <body class="bg-background text-foreground font-sans antialiased">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-6 focus:top-6 focus:z-50 focus:rounded-full focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-primary-foreground"
+    >
+      Skip to content
+    </a>
+    <main id="main-content">
+      <slot />
+    </main>
+  </body>
+</html>
+

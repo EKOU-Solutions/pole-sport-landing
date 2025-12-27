@@ -1,0 +1,73 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Navbar } from "../components/Navbar.tsx";
+import { Hero } from "../components/Hero.tsx";
+import { ValueProposition } from "../components/ValueProposition.tsx";
+import { Team } from "../components/Team.tsx";
+import { Pricing } from "../components/Pricing.tsx";
+import { ClassTypes } from "../components/ClassTypes.tsx";
+import { Testimonials } from "../components/Testimonials.tsx";
+import { Contact } from "../components/Contact.tsx";
+import { Location } from "../components/Location.tsx";
+import { Footer } from "../components/Footer.tsx";
+
+const title = "Pole Sport Medellin | Academia de Pole Fitness";
+const description =
+  "Academia de pole fitness en Medellin. Clases de Pole Sport, Pole Dancing y Flexibilidad para todos los cuerpos y niveles. Reserva tu clase de prueba.";
+const canonical = "https://TODO_DOMINIO/";
+const keywords =
+  "pole fitness, pole dance, pole sport, clases de pole, academia pole, Medellin, flexibilidad, entrenamiento";
+const author = "Pole Sport Medellin";
+const ogTitle = "Pole Sport Medellin | Academia de Pole Fitness";
+const ogDescription =
+  "Descubre tu fuerza interior. Clases de pole fitness para todos los cuerpos en un espacio seguro e inclusivo.";
+const ogImage = "https://TODO_OG_IMAGE";
+const ogUrl = canonical;
+const twitterSite = "@polesportmed";
+const twitterImage = ogImage;
+const hreflang = [{ lang: "es-CO", href: "https://TODO_DOMINIO/" }];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "SportsActivityLocation",
+  name: "Pole Sport Medellin",
+  description:
+    "Academia de pole fitness en Medellin con clases de Pole Sport, Pole Dancing y Flexibilidad.",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Medellin",
+    addressRegion: "Antioquia",
+    addressCountry: "CO",
+  },
+  openingHours: ["Mo-Fr 06:00-21:00", "Sa 08:00-14:00"],
+  priceRange: "$$",
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  keywords={keywords}
+  author={author}
+  ogTitle={ogTitle}
+  ogDescription={ogDescription}
+  ogImage={ogImage}
+  ogUrl={ogUrl}
+  twitterSite={twitterSite}
+  twitterImage={twitterImage}
+  lang="es"
+  hreflang={hreflang}
+  schema={schema}
+>
+  <Navbar client:load />
+  <Hero />
+  <ValueProposition />
+  <Team />
+  <Pricing />
+  <ClassTypes />
+  <Testimonials />
+  <Contact client:load />
+  <Location />
+  <Footer />
+</BaseLayout>

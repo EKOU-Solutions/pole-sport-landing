@@ -1,0 +1,61 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "Pole Sport Medellin Pricing | Plans and Memberships";
+const description =
+  "Check pricing and plans for pole fitness in Medellin. Flexible options for every level. Message us for details.";
+const ogTitle = "Plans and pricing at Pole Sport Medellin";
+const ogDescription =
+  "Discover flexible pricing for pole fitness in Medellin. Message us for personalized guidance.";
+const canonical = "https://TODO_DOMINIO/en/pricing";
+const hreflang = [
+  { lang: "es-CO", href: "https://TODO_DOMINIO/es/precios" },
+  { lang: "en", href: "https://TODO_DOMINIO/en/pricing" },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogTitle={ogTitle}
+  ogDescription={ogDescription}
+  canonical={canonical}
+  lang="en"
+  hreflang={hreflang}
+>
+  <section class="bg-azul-50">
+    <div class="mx-auto max-w-4xl px-6 py-16 text-center">
+      <h1 class="text-4xl font-semibold text-azul-900">
+        Plans and pricing for classes in Medellin
+      </h1>
+      <p class="mt-4 text-neutral-500">
+        TODO_PLANS_DETAIL. Message us for personalized guidance.
+      </p>
+      <div class="mt-6 flex flex-col justify-center gap-4 sm:flex-row">
+        <a
+          href="TODO_WHATSAPP_LINK"
+          class="inline-flex items-center justify-center rounded-full bg-azul-600 px-6 py-3 text-sm font-semibold text-white hover:bg-turquesa-600"
+        >
+          Message us at TODO_WHATSAPP_NUMBER
+        </a>
+        <a
+          href="/en#pricing"
+          class="inline-flex items-center justify-center rounded-full border border-azul-600 px-6 py-3 text-sm font-semibold text-azul-600 hover:bg-azul-50"
+        >
+          View featured plans
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="bg-white">
+    <div class="mx-auto max-w-5xl px-6 py-16">
+      <div class="rounded-3xl border border-azul-200 bg-azul-50 p-8 text-neutral-500">
+        TODO_FULL_PRICING_TABLE
+      </div>
+      <div class="mt-8 flex flex-col gap-3 text-sm text-azul-900">
+        <a href="/en" class="font-semibold hover:text-azul-600">Back to home</a>
+        <a href="/en/contact" class="font-semibold hover:text-azul-600">Contact us</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
