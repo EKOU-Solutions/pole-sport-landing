@@ -84,6 +84,12 @@
     --cta-hover: var(--turquesa-600);
     --card-shadow: 0 4px 20px -4px hsl(var(--azul-900) / 0.08);
     --card-shadow-hover: 0 8px 30px -4px hsl(var(--azul-900) / 0.12);
+
+    --animation-duration-fast: 200ms;
+    --animation-duration-normal: 400ms;
+    --animation-duration-slow: 700ms;
+    --animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
+    --animation-easing-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   .dark {
@@ -117,6 +123,16 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  html,
+  body {
+    scroll-behavior: smooth;
+    scroll-padding-top: 96px;
+  }
+
+  section[id] {
+    scroll-margin-top: 96px;
+  }
+
   h1,
   h2,
   h3,
@@ -127,6 +143,19 @@
     font-weight: 600;
     letter-spacing: -0.01em;
     color: hsl(var(--heading-color));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animated-blob,
+    .animate-fade-in-up,
+    .animate-fade-in-left,
+    .animate-fade-in-right,
+    .animate-scale-in,
+    .pulse-ring::before,
+    .btn-animated::before {
+      animation: none !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
@@ -160,12 +189,14 @@
     background-color: hsl(var(--card));
     border-radius: 0.75rem;
     box-shadow: var(--card-shadow);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    transition:
+      box-shadow var(--animation-duration-normal) var(--animation-easing),
+      transform var(--animation-duration-normal) var(--animation-easing);
   }
 
   .card-elevated:hover {
     box-shadow: var(--card-shadow-hover);
-    transform: translateY(-2px);
+    transform: translateY(-4px);
   }
 
   .text-gradient {
@@ -173,6 +204,125 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .animated-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.6;
+    animation: blob-float 20s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  .blob-1 {
+    animation-delay: 0s;
+  }
+
+  .blob-2 {
+    animation-delay: -7s;
+  }
+
+  .blob-3 {
+    animation-delay: -14s;
+  }
+
+  .section-transition {
+    position: relative;
+  }
+
+  .section-transition::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom, transparent, hsl(var(--background)));
+    pointer-events: none;
+  }
+
+  .link-animated {
+    position: relative;
+  }
+
+  .link-animated::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: hsl(var(--accent));
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--animation-duration-normal) var(--animation-easing);
+  }
+
+  .link-animated:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .btn-animated {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-animated::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      45deg,
+      transparent 40%,
+      hsl(var(--primary-foreground) / 0.1) 50%,
+      transparent 60%
+    );
+    transform: translateX(-100%);
+    transition: transform 600ms ease;
+  }
+
+  .btn-animated:hover::before {
+    transform: translateX(100%);
+  }
+
+  .btn-glow {
+    box-shadow: 0 0 20px hsl(var(--accent) / 0.3);
+    transition: box-shadow var(--animation-duration-normal) var(--animation-easing);
+  }
+
+  .btn-glow:hover {
+    box-shadow: 0 0 30px hsl(var(--accent) / 0.5), 0 0 60px hsl(var(--accent) / 0.2);
+  }
+
+  .icon-float {
+    transition: transform var(--animation-duration-normal) var(--animation-easing-bounce);
+  }
+
+  .group:hover .icon-float {
+    transform: translateY(-4px);
+  }
+
+  .img-zoom {
+    transition: transform var(--animation-duration-slow) var(--animation-easing);
+  }
+
+  .group:hover .img-zoom {
+    transform: scale(1.05);
+  }
+
+  .pulse-ring {
+    position: relative;
+  }
+
+  .pulse-ring::before {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: inherit;
+    border: 2px solid hsl(var(--accent));
+    animation: pulse-ring 2s ease-out infinite;
   }
 }
 
@@ -191,6 +341,128 @@
   .animate-float {
     animation: float 3s ease-in-out infinite;
   }
+}
+
+@keyframes blob-float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  50% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  75% {
+    transform: translate(40px, 30px) scale(1.05);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes float-gentle {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1deg);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s var(--animation-easing) forwards;
+}
+
+.animate-fade-in-left {
+  animation: fade-in-left 0.6s var(--animation-easing) forwards;
+}
+
+.animate-fade-in-right {
+  animation: fade-in-right 0.6s var(--animation-easing) forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.4s var(--animation-easing) forwards;
+}
+
+.animate-float-gentle {
+  animation: float-gentle 4s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    hsl(var(--primary-foreground) / 0.1) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
 }
 
 @keyframes float {

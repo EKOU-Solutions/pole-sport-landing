@@ -22,7 +22,10 @@ export const Navbar = ({ copy }: NavbarProps) => {
   const navLinks = nav.links as Array<{ label: string; href: string }>;
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 border-b border-border bg-card/95 backdrop-blur-md">
+    <header
+      className="fixed left-0 right-0 top-0 z-50 border-b border-border bg-card/95 backdrop-blur-md"
+      data-site-header
+    >
       <nav className="container-custom flex h-16 items-center justify-between px-4 md:h-20 md:px-8">
         <a href="#hero" className="flex items-center gap-2">
           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary">
@@ -38,7 +41,7 @@ export const Navbar = ({ copy }: NavbarProps) => {
             <a
               key={link.label}
               href={link.href}
-              className="rounded-md px-2 py-1 font-medium text-gris-800 transition-colors hover:text-primary focus-ring"
+              className="rounded-md px-2 py-1 font-medium text-gris-800 transition-colors hover:text-primary focus-ring link-animated"
             >
               {link.label}
             </a>
@@ -69,7 +72,9 @@ export const Navbar = ({ copy }: NavbarProps) => {
             </a>
           </div>
           <Button variant="cta" size="default" asChild>
-            <a href="#contacto">{nav.cta}</a>
+            <a href="#contacto" className="btn-animated btn-glow">
+              {nav.cta}
+            </a>
           </Button>
         </div>
 
@@ -90,7 +95,7 @@ export const Navbar = ({ copy }: NavbarProps) => {
                 key={link.label}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="py-2 font-medium text-gris-800 transition-colors hover:text-primary"
+                className="py-2 font-medium text-gris-800 transition-colors hover:text-primary link-animated"
               >
                 {link.label}
               </a>
@@ -119,7 +124,7 @@ export const Navbar = ({ copy }: NavbarProps) => {
                 </a>
               </div>
               <Button variant="cta" size="sm" asChild>
-                <a href="#contacto" onClick={() => setIsOpen(false)}>
+                <a href="#contacto" onClick={() => setIsOpen(false)} className="btn-animated btn-glow">
                   {nav.ctaShort}
                 </a>
               </Button>

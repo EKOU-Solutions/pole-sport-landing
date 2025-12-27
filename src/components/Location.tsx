@@ -1,4 +1,5 @@
 import { MapPin } from "lucide-react";
+import { AnimatedSection } from "@/hooks/useScrollAnimation";
 
 type LocationProps = {
   copy: Record<string, any>;
@@ -10,48 +11,53 @@ export const Location = ({ copy }: LocationProps) => {
   return (
     <section className="section-padding bg-card">
       <div className="container-custom">
-        <div className="mb-12 text-center">
-          <h2 className="mb-4 text-3xl font-heading font-bold md:text-4xl">{locationCopy.title}</h2>
-          <p className="mx-auto max-w-2xl text-lg text-muted-foreground">{locationCopy.subtitle}</p>
-        </div>
+        <AnimatedSection animation="fade-up" className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">{locationCopy.title}</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{locationCopy.subtitle}</p>
+        </AnimatedSection>
 
-        <div className="grid items-start gap-8 lg:grid-cols-3">
-          <div className="card-elevated p-6">
-            <div className="flex items-start gap-4">
-              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-secondary">
-                <MapPin className="h-5 w-5 text-primary" strokeWidth={2} />
-              </div>
-              <div>
-                <h3 className="mb-2 text-lg font-heading font-semibold">{locationCopy.addressTitle}</h3>
-                <p className="mb-4 text-muted-foreground">
-                  {locationCopy.addressLines.map((line: string, index: number) => (
-                    <span key={line}>
-                      {line}
-                      {index < locationCopy.addressLines.length - 1 && <br />}
-                    </span>
-                  ))}
-                </p>
-                <a
-                  href={locationCopy.mapLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm font-medium text-primary transition-colors hover:text-accent"
-                >
-                  {locationCopy.mapLinkText}
-                </a>
+        <div className="grid lg:grid-cols-3 gap-8 items-start">
+          <AnimatedSection animation="fade-right" delay={100}>
+            <div className="card-elevated p-6 group">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-primary group-hover:scale-105">
+                  <MapPin
+                    className="w-5 h-5 text-primary transition-colors group-hover:text-primary-foreground"
+                    strokeWidth={2}
+                  />
+                </div>
+                <div>
+                  <h3 className="font-heading font-semibold text-lg mb-2">{locationCopy.addressTitle}</h3>
+                  <p className="text-muted-foreground mb-4">
+                    {locationCopy.addressLines.map((line: string, index: number) => (
+                      <span key={line}>
+                        {line}
+                        {index < locationCopy.addressLines.length - 1 && <br />}
+                      </span>
+                    ))}
+                  </p>
+                  <a
+                    href={locationCopy.mapLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:text-accent transition-colors font-medium text-sm link-animated"
+                  >
+                    {locationCopy.mapLinkText}
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
+          </AnimatedSection>
 
-          <div className="lg:col-span-2">
-            <div className="flex aspect-video items-center justify-center rounded-2xl bg-azul-200">
-              <div className="p-8 text-center">
-                <MapPin className="mx-auto mb-4 h-16 w-16 text-primary/40" />
-                <p className="font-medium text-muted-foreground">{locationCopy.mapTitle}</p>
+          <AnimatedSection animation="fade-up" delay={200} className="lg:col-span-2">
+            <div className="aspect-video lg:aspect-[16/9] rounded-2xl overflow-hidden bg-azul-200 flex items-center justify-center group transition-all duration-500 hover:shadow-xl">
+              <div className="text-center p-8">
+                <MapPin className="w-16 h-16 text-primary/40 mx-auto mb-4 animate-float-gentle" />
+                <p className="text-muted-foreground font-medium">{locationCopy.mapTitle}</p>
                 <p className="text-sm text-muted-foreground">{locationCopy.mapPlaceholder}</p>
               </div>
             </div>
-          </div>
+          </AnimatedSection>
         </div>
       </div>
     </section>

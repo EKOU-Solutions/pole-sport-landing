@@ -24,7 +24,9 @@ export const Footer = ({ copy }: FooterProps) => {
           </h2>
           <p className="mb-8 text-white/70">{footerCopy.ctaText}</p>
           <Button variant="cta" size="xl" asChild>
-            <a href="#contacto">{footerCopy.ctaButton}</a>
+            <a href="#contacto" className="btn-animated btn-glow">
+              {footerCopy.ctaButton}
+            </a>
           </Button>
         </div>
 
@@ -58,7 +60,10 @@ export const Footer = ({ copy }: FooterProps) => {
             <ul className="space-y-2">
               {footerCopy.links.empresa.map((link: { label: string; href: string }) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-sm text-white/60 transition-colors hover:text-accent">
+                  <a
+                    href={link.href}
+                    className="text-sm text-white/60 transition-colors hover:text-accent link-animated"
+                  >
                     {link.label}
                   </a>
                 </li>
@@ -71,7 +76,10 @@ export const Footer = ({ copy }: FooterProps) => {
             <ul className="space-y-2">
               {footerCopy.links.servicios.map((link: { label: string; href: string }) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-sm text-white/60 transition-colors hover:text-accent">
+                  <a
+                    href={link.href}
+                    className="text-sm text-white/60 transition-colors hover:text-accent link-animated"
+                  >
                     {link.label}
                   </a>
                 </li>
@@ -84,7 +92,10 @@ export const Footer = ({ copy }: FooterProps) => {
             <ul className="space-y-2">
               {footerCopy.links.legal.map((link: { label: string; href: string }) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-sm text-white/60 transition-colors hover:text-accent">
+                  <a
+                    href={link.href}
+                    className="text-sm text-white/60 transition-colors hover:text-accent link-animated"
+                  >
                     {link.label}
                   </a>
                 </li>

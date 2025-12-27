@@ -10,6 +10,7 @@ import { Testimonials } from "../components/Testimonials.tsx";
 import { Contact } from "../components/Contact.tsx";
 import { Location } from "../components/Location.tsx";
 import { Footer } from "../components/Footer.tsx";
+import { AnimatedBackground } from "../components/AnimatedBackground.tsx";
 import copy from "@/content/copy.json";
 
 const title = "Pole Sport Medellin | Academia de Pole Fitness";
@@ -63,14 +64,15 @@ const pageCopy = copy.es;
   hreflang={hreflang}
   schema={schema}
 >
+  <AnimatedBackground />
   <Navbar copy={pageCopy} client:load />
-  <Hero copy={pageCopy} />
-  <ValueProposition copy={pageCopy} />
-  <Team copy={pageCopy} />
-  <Pricing copy={pageCopy} />
-  <ClassTypes copy={pageCopy} />
-  <Testimonials copy={pageCopy} />
-  <Contact copy={pageCopy} client:load />
-  <Location copy={pageCopy} />
+  <Hero copy={pageCopy} client:load />
+  <ValueProposition copy={pageCopy} client:load />
+  <Team copy={pageCopy} client:load />
+  <Pricing copy={pageCopy} client:load />
+  <ClassTypes copy={pageCopy} client:load />
+  <Testimonials copy={pageCopy} client:load />
+  <Contact copy={pageCopy} client:only="react"  />
+  <Location copy={pageCopy} client:load />
   <Footer copy={pageCopy} />
 </BaseLayout>
