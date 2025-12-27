@@ -11,13 +11,18 @@ const {
   ogTitle,
   ogDescription,
   ogImage,
+  ogImageAlt,
   ogUrl,
+  siteName,
   twitterSite,
+  twitterCreator,
   twitterImage,
+  twitterImageAlt,
   canonical,
   lang = "es",
   hreflang = [],
   schema,
+  robots,
 } = Astro.props;
 ---
 
@@ -36,13 +41,31 @@ const {
     <meta property="og:description" content={ogDescription ?? description} />
     {ogImage && <meta property="og:image" content={ogImage} />}
     <meta property="og:url" content={ogUrl ?? canonical} />
+    <meta property="og:site_name" content={siteName ?? author ?? title} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content={lang === "es" ? "es_CO" : "en_US"} />
+    {ogImage && <meta property="og:image:alt" content={ogImageAlt ?? title} />}
     <meta name="twitter:card" content="summary_large_image" />
     {twitterSite && <meta name="twitter:site" content={twitterSite} />}
+    {(twitterCreator || twitterSite) && (
+      <meta name="twitter:creator" content={twitterCreator ?? twitterSite} />
+    )}
+    <meta name="twitter:title" content={ogTitle ?? title} />
+    <meta name="twitter:description" content={ogDescription ?? description} />
     {(twitterImage || ogImage) && (
       <meta name="twitter:image" content={twitterImage ?? ogImage} />
     )}
+    {(twitterImage || ogImage) && (
+      <meta name="twitter:image:alt" content={twitterImageAlt ?? ogImageAlt ?? title} />
+    )}
+    <meta
+      name="robots"
+      content={robots ?? "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"}
+    />
+    <meta
+      name="googlebot"
+      content={robots ?? "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"}
+    />
     <link rel="canonical" href={canonical} />
     {hreflang.map((item: Hreflang) => (
       <link rel="alternate" hreflang={item.lang} href={item.href} />

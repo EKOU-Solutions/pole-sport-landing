@@ -8,7 +8,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://TODO_DOMINIO",
+  site: "https://polesport.ekou.lat",
   integrations: [react(), sitemap()],
 
   vite: {
