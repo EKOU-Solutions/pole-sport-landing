@@ -147,18 +147,6 @@
     color: hsl(var(--heading-color));
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    .animated-blob,
-    .animate-fade-in-up,
-    .animate-fade-in-left,
-    .animate-fade-in-right,
-    .animate-scale-in,
-    .pulse-ring::before,
-    .btn-animated::before {
-      animation: none !important;
-      transition-duration: 0.01ms !important;
-    }
-  }
 }
 
 @layer components {

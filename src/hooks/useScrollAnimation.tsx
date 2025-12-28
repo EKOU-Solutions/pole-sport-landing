@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { Children, useEffect, useRef, useState, type ReactNode } from "react";
 
 interface UseScrollAnimationOptions {
   threshold?: number;
@@ -10,26 +10,9 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
   const { threshold = 0.1, rootMargin = "0px 0px -50px 0px", triggerOnce = true } = options;
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const prefersReducedMotion = false;
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setPrefersReducedMotion(mediaQuery.matches);
-
-    const handleChange = (e: MediaQueryListEvent) => {
-      setPrefersReducedMotion(e.matches);
-    };
-
-    mediaQuery.addEventListener("change", handleChange);
-    return () => mediaQuery.removeEventListener("change", handleChange);
-  }, []);
-
-  useEffect(() => {
-    if (prefersReducedMotion) {
-      setIsVisible(true);
-      return;
-    }
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -114,28 +97,27 @@ export const StaggeredContainer = ({
   staggerDelay = 100,
 }: StaggeredContainerProps) => {
   const { ref, isVisible, prefersReducedMotion } = useScrollAnimation();
+  const items = Children.toArray(children);
 
   return (
     <div ref={ref} className={className}>
-      {Array.isArray(children)
-        ? children.map((child, index) => (
-            <div
-              key={index}
-              className={`transition-all duration-500 ease-out ${
-                prefersReducedMotion
-                  ? "opacity-100"
-                  : isVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-6"
-              }`}
-              style={{
-                transitionDelay: prefersReducedMotion ? "0ms" : `${index * staggerDelay}ms`,
-              }}
-            >
-              {child}
-            </div>
-          ))
-        : children}
+      {items.map((child, index) => (
+        <div
+          key={(child as any)?.key ?? index}
+          className={`transition-all duration-500 ease-out ${
+            prefersReducedMotion
+              ? "opacity-100"
+              : isVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-6"
+          }`}
+          style={{
+            transitionDelay: prefersReducedMotion ? "0ms" : `${index * staggerDelay}ms`,
+          }}
+        >
+          {child}
+        </div>
+      ))}
     </div>
   );
 };
