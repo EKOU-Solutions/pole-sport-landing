@@ -234,12 +234,26 @@
     "location": {
       "title": "Nuestra ubicacion",
       "subtitle": "Estamos ubicados en el corazon de Medellin, con facil acceso desde cualquier punto de la ciudad.",
-      "addressTitle": "Direccion",
-      "addressLines": ["[Calle XX # XX-XX]", "Barrio [Nombre del Barrio]", "Medellin, Antioquia"],
-      "mapLinkText": "Ver en Google Maps ->",
-      "mapLink": "https://maps.google.com",
-      "mapTitle": "Mapa de ubicacion",
-      "mapPlaceholder": "[Integrar Google Maps aqui]"
+      "mapTitle": "Mapa con las dos ubicaciones",
+      "locations": [
+        {
+          "name": "Metro de Medellin (Talleres y Administracion)",
+          "addressLines": ["Calle 44 # 46-001", "Bello, Antioquia"],
+          "details": ["Horario oficinas: Lunes a Viernes de 7:30 a.m. a 5:30 p.m."],
+          "mapLink": "https://www.google.com/maps?q=Calle%2044%20%23%2046-001,%20Bello,%20Antioquia",
+          "mapLinkLabel": "Ver en Google Maps"
+        },
+        {
+          "name": "Mercado Libre Medellin (Oficinas)",
+          "addressLines": ["Calle 10 #32-115", "Medellin, Antioquia"],
+          "details": [
+            "Centro de desarrollo tecnologico e innovacion.",
+            "Formato hibrido con flexibilidad para colaboradores."
+          ],
+          "mapLink": "https://www.google.com/maps?q=Calle%2010%20%2332-115,%20Medellin,%20Antioquia",
+          "mapLinkLabel": "Ver en Google Maps"
+        }
+      ]
     },
     "footer": {
       "ctaTitle": "Lista para transformar tu vida?",
@@ -510,12 +524,26 @@
     "location": {
       "title": "Our location",
       "subtitle": "We are located in the heart of Medellin, with easy access from anywhere in the city.",
-      "addressTitle": "Address",
-      "addressLines": ["[Street XX # XX-XX]", "Neighborhood [Name]", "Medellin, Antioquia"],
-      "mapLinkText": "View on Google Maps ->",
-      "mapLink": "https://maps.google.com",
-      "mapTitle": "Location map",
-      "mapPlaceholder": "[Integrate Google Maps here]"
+      "mapTitle": "Map with both locations",
+      "locations": [
+        {
+          "name": "Metro de Medellin (Workshops and Administration)",
+          "addressLines": ["Calle 44 # 46-001", "Bello, Antioquia"],
+          "details": ["Office hours: Monday to Friday, 7:30 a.m. to 5:30 p.m."],
+          "mapLink": "https://www.google.com/maps?q=Calle%2044%20%23%2046-001,%20Bello,%20Antioquia",
+          "mapLinkLabel": "View on Google Maps"
+        },
+        {
+          "name": "Mercado Libre Medellin (Offices)",
+          "addressLines": ["Calle 10 #32-115", "Medellin, Antioquia"],
+          "details": [
+            "Technology and innovation development center.",
+            "Hybrid work format with flexibility for collaborators."
+          ],
+          "mapLink": "https://www.google.com/maps?q=Calle%2010%20%2332-115,%20Medellin,%20Antioquia",
+          "mapLinkLabel": "View on Google Maps"
+        }
+      ]
     },
     "footer": {
       "ctaTitle": "Ready to transform your life?",

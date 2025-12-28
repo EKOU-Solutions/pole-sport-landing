@@ -22,6 +22,7 @@
   --color-ring: hsl(var(--ring));
 
   --color-azul-50: hsl(var(--azul-50));
+  --color-azul-100: hsl(var(--azul-100));
   --color-azul-200: hsl(var(--azul-200));
   --color-azul-400: hsl(var(--azul-400));
   --color-azul-600: hsl(var(--azul-600));
@@ -38,6 +39,7 @@
 @layer base {
   :root {
     --azul-50: 210 53% 94%;
+    --azul-100: 210 53% 90%;
     --azul-200: 211 49% 80%;
     --azul-400: 213 45% 52%;
     --azul-600: 212 60% 39%;
@@ -341,6 +343,10 @@
   .animate-float {
     animation: float 3s ease-in-out infinite;
   }
+
+  .animate-float-slow {
+    animation: float 6s ease-in-out infinite;
+  }
 }
 
 @keyframes blob-float {
@@ -473,4 +479,46 @@
   50% {
     transform: translateY(-10px);
   }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.02);
+  }
+}
+
+@keyframes wave-slow {
+  0%,
+  100% {
+    transform: translateX(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-20px) scaleY(1.05);
+  }
+}
+
+@keyframes wave-slower {
+  0%,
+  100% {
+    transform: translateX(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(20px) scaleY(0.95);
+  }
+}
+
+.animate-wave-slow {
+  animation: wave-slow 8s ease-in-out infinite;
+}
+
+.animate-wave-slower {
+  animation: wave-slower 12s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
 }
