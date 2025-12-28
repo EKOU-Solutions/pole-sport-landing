@@ -21,7 +21,7 @@ export const Footer = ({ copy }: FooterProps) => {
       <footer className="relative text-white">
         <div className="container-custom px-4 py-16 md:px-8">
           <div className="mx-auto mb-16 max-w-2xl text-center">
-            <h2 className="mb-4 text-3xl font-heading font-bold text-white/70 md:text-4xl">
+            <h2 className="mb-4 text-3xl font-heading font-bold text-white/80 md:text-4xl">
               {footerCopy.ctaTitle}
             </h2>
             <p className="mb-8 text-white/70">{footerCopy.ctaText}</p>
@@ -58,7 +58,7 @@ export const Footer = ({ copy }: FooterProps) => {
             </div>
 
             <div>
-              <h4 className="mb-4 font-heading font-semibold">{footerCopy.headings.empresa}</h4>
+              <h4 className="mb-4 font-heading font-semibold text-white/80">{footerCopy.headings.empresa}</h4>
               <ul className="space-y-2">
                 {footerCopy.links.empresa.map((link: { label: string; href: string }) => (
                   <li key={link.label}>
@@ -74,7 +74,7 @@ export const Footer = ({ copy }: FooterProps) => {
             </div>
 
             <div>
-              <h4 className="mb-4 font-heading font-semibold">{footerCopy.headings.servicios}</h4>
+              <h4 className="mb-4 font-heading font-semibold text-white/80">{footerCopy.headings.servicios}</h4>
               <ul className="space-y-2">
                 {footerCopy.links.servicios.map((link: { label: string; href: string }) => (
                   <li key={link.label}>
@@ -90,7 +90,7 @@ export const Footer = ({ copy }: FooterProps) => {
             </div>
 
             <div>
-              <h4 className="mb-4 font-heading font-semibold">{footerCopy.headings.legal}</h4>
+              <h4 className="mb-4 font-heading font-semibold text-white/80">{footerCopy.headings.legal}</h4>
               <ul className="space-y-2">
                 {footerCopy.links.legal.map((link: { label: string; href: string }) => (
                   <li key={link.label}>
