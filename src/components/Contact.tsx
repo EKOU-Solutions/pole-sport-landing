@@ -155,13 +155,13 @@ export const Contact = ({ copy }: ContactProps) => {
                       className="focus-ring resize-none transition-all duration-300 hover:border-primary"
                     />
                   </div>
-                  <Button
-                    type="submit"
-                    variant="cta"
-                    size="lg"
-                    className="w-full btn-animated btn-glow group"
-                    disabled={isSubmitting}
-                  >
+                <Button
+                  type="submit"
+                  variant="cta"
+                  size="lg"
+                  className="w-full cursor-pointer btn-animated btn-glow group"
+                  disabled={isSubmitting}
+                >
                     {isSubmitting ? (
                       <span className="animate-pulse">{contactCopy.form.submitting}</span>
                     ) : (
